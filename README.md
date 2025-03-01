@@ -60,8 +60,7 @@ const normalizedData = normalizeData({
 
 | Type      | Value     | Description                                      |
 |---------  |---------- |--------------------------------------------------|
-| isTrimmed | `true`/`false`    | trimmed the field deeply.        |
-|            | `false`   | doesn't trimmed the field.       |
+| isTrimmed | `true`/`false`    | trimmed the field deeply if true.        |
 | fieldsToNormalize | `["field1", "field2",...]` | normalized particular field only. |
 | transformTo | `capitalize`/ `uppercase` / `lowercase` | transform the field. |
 | replaceTo | `[{"from": "-", "to": "", "scope": "global"}, {"from": "=", "to": " ", "scope": "first"}]` | replace the field. |
