@@ -49,7 +49,6 @@ function normalizeString(str, isTrimmed, sliceTo, transformTo, replaceTo) {
                 return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
             }
             else if (transformTo == "uppercase") {
-                console.log("uppercase")
                 return word.toUpperCase()
             }
             else if (transformTo == "lowercase") {
@@ -59,7 +58,6 @@ function normalizeString(str, isTrimmed, sliceTo, transformTo, replaceTo) {
         .join(" ");
     // slice data
     if (!isEmpty(sliceTo)) {
-        console.log("not empty")
         normalized = `${normalized.slice(sliceTo.from, sliceTo.to)}${sliceTo.add}`
     }
 
@@ -89,7 +87,6 @@ function normalizeObject(obj, fieldsToNormalize, isTrimmed, sliceTo, transformTo
         if (obj.hasOwnProperty(key)) {
             const value = obj[key];
             if (fieldsToNormalize.includes(key)) {
-                console.log("key ", key);
                 normalizedObj[key] = normalizeString(value, isTrimmed, sliceTo, transformTo, replaceTo);
             } else if (typeof value === "string") {
                 normalizedObj[key] = value;
@@ -120,68 +117,5 @@ function normalizeObject(obj, fieldsToNormalize, isTrimmed, sliceTo, transformTo
     return normalizedObj;
 }
 
-
-// testing
-const data = {
-    contacts: [
-        {
-            "clientId": "67c018ca5b40f09963dcb894",
-            "countryCode": "+91",
-            "number": 76455961,
-            "primary": true,
-            "whatsApp": true,
-            "_id": "67c018cb5b40f09963dcb8a0",
-            "createdAt": "2025-02-27T07:48:27.502Z",
-            "updatedAt": "2025-02-27T07:48:27.502Z",
-            "name": "asu salman",
-            "__v": 0
-        },
-        {
-            "clientId": "67c018ca5b40f09963dcb894",
-            "countryCode": "+91",
-            "number": 765959,
-            "primary": false,
-            "whatsApp": false,
-            "_id": "67c018cb5b40f09963dcb8a1",
-            "createdAt": "2025-02-27T07:48:27.502Z",
-            "updatedAt": "2025-02-27T07:48:27.502Z",
-            "name": " asu    sa-lman  arif   ",
-            "__v": 0
-        }
-    ]
-}
-
-const normalizE_DATE_INCLUDE_FIELDS = ["name", "age", "clientId", "primary"];
-const transformTo = "capitalize";
-const replaceTo = [
-    {
-        from: "-",
-        to: "",
-        scope: "global"
-    },
-    {
-        from: "=",
-        to: " ",
-        scope: "first"
-    }
-];
-const sliceTo = {
-    from: 0,
-    to: 3,
-    add: ""
-}
-
-console.log(normalizeData({
-    data,
-    isTrimmed: true,
-    replaceTo,
-    // sliceTo: {
-    //     from: 0,
-    //     to: 13,
-    //     add: ",,,"
-    // },
-    fieldsToNormalize: normalizE_DATE_INCLUDE_FIELDS,
-    transformTo: "capitalize"
-}));
 
 module.exports = { normalizeData }

@@ -1,0 +1,29 @@
+{
+  "name": "normalize-response",
+  "version": "1.0.0",
+  "description": "normalized data before sending...",
+  "main": "index.js",
+  "scripts": {
+    "test": "normalize-response-test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sallbro/normalize-response.git"
+  },
+  "keywords": [
+    "normalize-data",
+    "object",
+    "array",
+    "string",
+    "transform",
+    "replace",
+    "slice",
+    "trimmed"
+  ],
+  "author": "sallbro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sallbro/normalize-response/issues"
+  },
+  "homepage": "https://github.com/Sallbro/normalize-response#readme"
+}
