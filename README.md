@@ -3,11 +3,11 @@
 
 
 ## **📌 Features** 
-✅ **Normalized Nested Data** — object, array and string.
-✅ **fieldsToNormalize** — normalized particular field only.
-✅ **Replace Data** — multiple at once.
-✅ **Trimmed Data** — deep trimmed data.
-✅ **Splice Data** — get the data u want to display. 
+✅ **Normalized Nested Data** — object, array and string.    
+✅ **fieldsToNormalize** — normalized particular field only.         
+✅ **Replace Data** — multiple at once.            
+✅ **Trimmed Data** — deep trimmed data.         
+✅ **Splice Data** — get the data u want to display.  
 
 
 ## **📖 Example Usage**  
@@ -20,7 +20,7 @@ npm install normalize-response
 
 ### ** Basic Usecase**  
 ```sh
-const { normalizeData } = require("normalize-data");
+const { normalizeData } = require("normalize-response");
 const data={...};
 const normalizedData = normalizeData({
     data,
@@ -32,7 +32,7 @@ const normalizedData = normalizeData({
 
 ### ** Advanced Usecase**  
 ```sh
-const { normalizeData } = require("normalize-data");
+const { normalizeData } = require("normalize-response");
 const data={...};
 const normalizedData = normalizeData({
     data,
